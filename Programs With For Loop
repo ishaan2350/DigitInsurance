@@ -1,0 +1,61 @@
+1)  Write a Program for the sum of n natural numbers eg. Input N=5 output 1+2+3+4+5 :
+
+import java.util.Scanner;
+
+public class SumFor {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        int sum = 0;
+
+        for (int i = 1; i <= n; i++) {
+            sum += i;
+            System.out.print(i + (i < n ? "+" : ""));
+        }
+
+        System.out.println(" = " + sum);
+    }
+}
+
+2)  Write a Program to reverse the integer number eg. Input n=231 reverse is 132 :
+
+import java.util.Scanner;
+
+public class ReverseFor {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        int rev = 0;
+
+        for (; n != 0; n /= 10) {
+            rev = rev * 10 + (n % 10);
+        }
+
+        System.out.println("Reverse: " + rev);
+    }
+}
+3)  Write a Program to find Palindrome Number :
+
+
+import java.util.Scanner;
+
+public class Palindrome {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        int original = n, rev = 0;
+
+        while (n != 0) {
+            rev = rev * 10 + (n % 10);
+            n /= 10;
+        }
+
+        if (original == rev)
+            System.out.println("Palindrome");
+        else
+            System.out.println("Not Palindrome");
+    }
+}
