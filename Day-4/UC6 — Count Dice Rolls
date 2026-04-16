@@ -1,0 +1,32 @@
+import java.util.Random;
+
+public class UC6_DiceCount {
+    public static void main(String[] args) {
+
+        int position = 0;
+        int count = 0;
+
+        Random rand = new Random();
+
+        while (position < 100) {
+
+            int dice = rand.nextInt(6) + 1;
+            int option = rand.nextInt(3);
+
+            count++;
+
+            if (option == 1)
+                position += dice;
+            else if (option == 2)
+                position -= dice;
+
+            if (position < 0)
+                position = 0;
+
+            if (position > 100)
+                position -= dice;
+        }
+
+        System.out.println("Total Dice Rolls: " + count);
+    }
+}
