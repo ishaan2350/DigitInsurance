@@ -1,0 +1,28 @@
+import java.util.Random;
+
+public class UC5_MonthlyWage {
+    public static void main(String[] args) {
+
+        int WAGE_PER_HOUR = 20;
+        int FULL_TIME = 8;
+        int PART_TIME = 4;
+        int WORKING_DAYS = 20;
+
+        int totalSalary = 0;
+
+        Random rand = new Random();
+
+        for (int day = 1; day <= WORKING_DAYS; day++) {
+
+            int check = rand.nextInt(3);
+            int hours = 0;
+
+            if (check == 1) hours = FULL_TIME;
+            else if (check == 2) hours = PART_TIME;
+
+            totalSalary += hours * WAGE_PER_HOUR;
+        }
+
+        System.out.println("Monthly Salary: " + totalSalary);
+    }
+}
