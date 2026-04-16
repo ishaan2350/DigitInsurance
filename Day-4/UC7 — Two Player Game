@@ -1,0 +1,45 @@
+import java.util.Random;
+
+public class UC7_TwoPlayers {
+    public static void main(String[] args) {
+
+        int p1 = 0, p2 = 0;
+        boolean turn = true;
+
+        Random rand = new Random();
+
+        while (p1 < 100 && p2 < 100) {
+
+            int dice = rand.nextInt(6) + 1;
+            int option = rand.nextInt(3);
+
+            if (turn) {
+                p1 = move(p1, dice, option);
+                System.out.println("Player 1: " + p1);
+
+                if (option != 1) turn = false;
+            } else {
+                p2 = move(p2, dice, option);
+                System.out.println("Player 2: " + p2);
+
+                if (option != 1) turn = true;
+            }
+        }
+
+        if (p1 == 100)
+            System.out.println("Player 1 Wins!");
+        else
+            System.out.println("Player 2 Wins!");
+    }
+
+    static int move(int pos, int dice, int option) {
+
+        if (option == 1) pos += dice;
+        else if (option == 2) pos -= dice;
+
+        if (pos < 0) return 0;
+        if (pos > 100) return pos - dice;
+
+        return pos;
+    }
+}
