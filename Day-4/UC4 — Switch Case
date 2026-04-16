@@ -1,0 +1,23 @@
+import java.util.Random;
+
+public class UC4_SwitchCase {
+    public static void main(String[] args) {
+
+        int WAGE_PER_HOUR = 20;
+        int FULL_TIME = 8;
+        int PART_TIME = 4;
+
+        Random rand = new Random();
+        int check = rand.nextInt(3);
+
+        int hours;
+
+        switch (check) {
+            case 1: hours = FULL_TIME; break;
+            case 2: hours = PART_TIME; break;
+            default: hours = 0;
+        }
+
+        System.out.println("Salary: " + (hours * WAGE_PER_HOUR));
+    }
+}
