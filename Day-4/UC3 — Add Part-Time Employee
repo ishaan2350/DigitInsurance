@@ -1,0 +1,22 @@
+import java.util.Random;
+
+public class UC3_PartTime {
+    public static void main(String[] args) {
+
+        int WAGE_PER_HOUR = 20;
+        int FULL_TIME = 8;
+        int PART_TIME = 4;
+
+        Random rand = new Random();
+        int check = rand.nextInt(3);
+
+        int hours = 0;
+
+        if (check == 1)
+            hours = FULL_TIME;
+        else if (check == 2)
+            hours = PART_TIME;
+
+        System.out.println("Salary: " + (hours * WAGE_PER_HOUR));
+    }
+}
