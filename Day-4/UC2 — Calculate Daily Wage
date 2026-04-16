@@ -1,0 +1,19 @@
+import java.util.Random;
+
+public class UC2_DailyWage {
+    public static void main(String[] args) {
+
+        int WAGE_PER_HOUR = 20;
+        int FULL_DAY_HOURS = 8;
+
+        Random rand = new Random();
+        int check = rand.nextInt(2);
+
+        if (check == 1) {
+            int salary = FULL_DAY_HOURS * WAGE_PER_HOUR;
+            System.out.println("Daily Wage: " + salary);
+        } else {
+            System.out.println("Employee Absent → Wage = 0");
+        }
+    }
+}
