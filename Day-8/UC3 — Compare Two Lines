@@ -1,0 +1,16 @@
+public class UC3_LineCompare {
+    public static void main(String[] args) {
+
+        double len1 = Math.sqrt(Math.pow(3 - 0, 2) + Math.pow(4 - 0, 2));
+        double len2 = Math.sqrt(Math.pow(6 - 0, 2) + Math.pow(8 - 0, 2));
+
+        int result = Double.compare(len1, len2);
+
+        if (result == 0)
+            System.out.println("Equal");
+        else if (result > 0)
+            System.out.println("Line1 is greater");
+        else
+            System.out.println("Line2 is greater");
+    }
+}
