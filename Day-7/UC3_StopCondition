@@ -1,0 +1,26 @@
+import java.util.Random;
+
+public class UC3_StopCondition {
+    public static void main(String[] args) {
+
+        int stake = 100;
+        int bet = 1;
+
+        int winLimit = 150;
+        int lossLimit = 50;
+
+        Random rand = new Random();
+
+        while (stake > lossLimit && stake < winLimit) {
+
+            int result = rand.nextInt(2);
+
+            if (result == 1)
+                stake += bet;
+            else
+                stake -= bet;
+        }
+
+        System.out.println("Final Stake: " + stake);
+    }
+}
