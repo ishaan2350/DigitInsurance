@@ -1,0 +1,19 @@
+import java.util.Random;
+
+public class UC2_WinLose {
+    public static void main(String[] args) {
+
+        int stake = 100;
+        int bet = 1;
+
+        Random rand = new Random();
+        int result = rand.nextInt(2);
+
+        if (result == 1)
+            stake += bet;
+        else
+            stake -= bet;
+
+        System.out.println("Stake after game: " + stake);
+    }
+}
