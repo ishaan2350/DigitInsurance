@@ -1,0 +1,22 @@
+class Company {
+    String name;
+    int wage;
+
+    Company(String name, int wage) {
+        this.name = name;
+        this.wage = wage;
+    }
+}
+
+public class UC10_ArrayCompanies {
+    public static void main(String[] args) {
+
+        Company[] arr = new Company[2];
+
+        arr[0] = new Company("TCS", 2000);
+        arr[1] = new Company("Infosys", 3000);
+
+        for (Company c : arr)
+            System.out.println(c.name + " " + c.wage);
+    }
+}
