@@ -1,0 +1,27 @@
+public class UC8_MultipleCompanies {
+
+    static int compute(String company, int wage, int days, int hours) {
+
+        int totalHours = 0, totalDays = 0;
+
+        while (totalHours <= hours && totalDays < days) {
+
+            totalDays++;
+
+            int check = (int)(Math.random() * 3);
+            int workHours = (check == 1) ? 8 : (check == 2) ? 4 : 0;
+
+            totalHours += workHours;
+        }
+
+        int salary = totalHours * wage;
+        System.out.println(company + " Salary: " + salary);
+        return salary;
+    }
+
+    public static void main(String[] args) {
+
+        compute("TCS", 20, 20, 100);
+        compute("Infosys", 25, 22, 110);
+    }
+}
