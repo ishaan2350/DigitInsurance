@@ -1,1 +1,30 @@
+import java.util.*;
 
+class AddressBook {
+    ArrayList<String> contacts = new ArrayList<>();
+}
+
+public class UC6_MultipleAddressBook {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        HashMap<String, AddressBook> map = new HashMap<>();
+
+        System.out.print("Enter number of address books: ");
+        int n = sc.nextInt();
+
+        for (int i = 0; i < n; i++) {
+
+            System.out.print("Enter Address Book Name: ");
+            String name = sc.next();
+
+            map.put(name, new AddressBook());
+        }
+
+        System.out.println("\nAddress Books:");
+        for (String key : map.keySet())
+            System.out.println(key);
+    }
+}
