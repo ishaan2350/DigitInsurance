@@ -1,0 +1,35 @@
+import java.util.*;
+
+class Contact {
+    String name, city;
+
+    Contact(String name, String city) {
+        this.name = name;
+        this.city = city;
+    }
+}
+
+public class UC5_MultipleContacts {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Contact> list = new ArrayList<>();
+
+        System.out.print("How many contacts: ");
+        int n = sc.nextInt();
+
+        for (int i = 0; i < n; i++) {
+            System.out.print("Name: ");
+            String name = sc.next();
+
+            System.out.print("City: ");
+            String city = sc.next();
+
+            list.add(new Contact(name, city));
+        }
+
+        System.out.println("\nAll Contacts:");
+        for (Contact c : list)
+            System.out.println(c.name + " " + c.city);
+    }
+}
