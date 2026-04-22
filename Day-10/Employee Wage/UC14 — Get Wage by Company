@@ -1,0 +1,30 @@
+import java.util.*;
+
+class Company {
+    String name;
+    int wage;
+
+    Company(String name, int wage) {
+        this.name = name;
+        this.wage = wage;
+    }
+}
+
+public class UC14_SearchCompany {
+
+    public static void main(String[] args) {
+
+        ArrayList<Company> list = new ArrayList<>();
+
+        list.add(new Company("TCS", 2000));
+        list.add(new Company("Infosys", 3000));
+
+        String search = "TCS";
+
+        for (Company c : list) {
+            if (c.name.equals(search)) {
+                System.out.println("Wage: " + c.wage);
+            }
+        }
+    }
+}
