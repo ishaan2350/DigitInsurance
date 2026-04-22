@@ -1,0 +1,28 @@
+class EmployeeUC7 {
+
+    int compute() {
+
+        int wage = 20, full = 8, part = 4;
+        int totalHours = 0, days = 0;
+
+        while (totalHours <= 100 && days < 20) {
+
+            days++;
+
+            int check = (int)(Math.random() * 3);
+            int hours = (check == 1) ? full : (check == 2) ? part : 0;
+
+            totalHours += hours;
+        }
+
+        return totalHours * wage;
+    }
+}
+
+public class UC7_OOP {
+    public static void main(String[] args) {
+
+        EmployeeUC7 e = new EmployeeUC7();
+        System.out.println("Salary: " + e.compute());
+    }
+}
