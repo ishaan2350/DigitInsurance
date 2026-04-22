@@ -1,0 +1,18 @@
+interface Wage {
+    void compute();
+}
+
+class Company implements Wage {
+
+    public void compute() {
+        System.out.println("Computing wage...");
+    }
+}
+
+public class UC11_Interface {
+    public static void main(String[] args) {
+
+        Company c = new Company();
+        c.compute();
+    }
+}
