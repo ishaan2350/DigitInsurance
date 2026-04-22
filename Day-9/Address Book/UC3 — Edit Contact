@@ -1,0 +1,33 @@
+import java.util.*;
+
+class ContactEdit {
+    String name, city;
+
+    ContactEdit(String name, String city) {
+        this.name = name;
+        this.city = city;
+    }
+}
+
+public class UC3_EditContact {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        ArrayList<ContactEdit> list = new ArrayList<>();
+
+        list.add(new ContactEdit("Ishaan", "Chennai"));
+
+        System.out.print("Enter name to edit: ");
+        String name = sc.next();
+
+        for (ContactEdit c : list) {
+            if (c.name.equals(name)) {
+                System.out.print("New City: ");
+                c.city = sc.next();
+            }
+        }
+
+        for (ContactEdit c : list)
+            System.out.println(c.name + " " + c.city);
+    }
+}
