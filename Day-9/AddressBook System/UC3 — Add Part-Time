@@ -1,0 +1,16 @@
+public class UC3_PartTime {
+    public static void main(String[] args) {
+
+        int wage = 20;
+        int full = 8, part = 4;
+
+        int check = (int)(Math.random() * 3);
+
+        int hours = 0;
+
+        if (check == 1) hours = full;
+        else if (check == 2) hours = part;
+
+        System.out.println("Salary: " + (hours * wage));
+    }
+}
