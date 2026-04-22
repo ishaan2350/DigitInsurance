@@ -1,0 +1,30 @@
+import java.util.*;
+
+class Contact {
+    String name, city;
+
+    Contact(String name, String city) {
+        this.name = name;
+        this.city = city;
+    }
+}
+
+public class UC2_AddContact {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Contact> list = new ArrayList<>();
+
+        System.out.print("Enter Name: ");
+        String name = sc.next();
+
+        System.out.print("Enter City: ");
+        String city = sc.next();
+
+        list.add(new Contact(name, city));
+
+        for (Contact c : list)
+            System.out.println(c.name + " " + c.city);
+    }
+}
