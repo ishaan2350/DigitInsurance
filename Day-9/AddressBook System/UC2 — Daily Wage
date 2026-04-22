@@ -1,0 +1,14 @@
+public class UC2_DailyWage {
+    public static void main(String[] args) {
+
+        int wage = 20;
+        int hours = 8;
+
+        int check = (int)(Math.random() * 2);
+
+        if (check == 1)
+            System.out.println("Daily Wage: " + (wage * hours));
+        else
+            System.out.println("Daily Wage: 0");
+    }
+}
