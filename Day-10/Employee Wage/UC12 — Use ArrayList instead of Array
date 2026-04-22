@@ -1,0 +1,23 @@
+import java.util.*;
+
+class Company {
+    String name;
+
+    Company(String name) {
+        this.name = name;
+    }
+}
+
+public class UC12_ArrayList {
+
+    public static void main(String[] args) {
+
+        ArrayList<Company> list = new ArrayList<>();
+
+        list.add(new Company("TCS"));
+        list.add(new Company("Infosys"));
+
+        for (Company c : list)
+            System.out.println(c.name);
+    }
+}
