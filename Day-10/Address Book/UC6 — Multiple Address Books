@@ -4,6 +4,7 @@ class AddressBook {
     ArrayList<String> contacts = new ArrayList<>();
 }
 
+//main class
 public class UC6_MultipleAddressBook {
 
     public static void main(String[] args) {
