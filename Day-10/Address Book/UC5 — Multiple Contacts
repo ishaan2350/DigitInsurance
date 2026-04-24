@@ -8,7 +8,7 @@ class Contact {
         this.city = city;
     }
 }
-
+// main class
 public class UC5_MultipleContacts {
     public static void main(String[] args) {
 
