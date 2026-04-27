@@ -1,0 +1,47 @@
+import java.util.*;
+
+class CompanyShares {
+    String symbol;
+    int shares;
+
+    CompanyShares(String symbol, int shares) {
+        this.symbol = symbol;
+        this.shares = shares;
+    }
+}
+
+class StockAccount {
+    ArrayList<CompanyShares> list = new ArrayList<>();
+
+    void buy(String symbol, int shares) {
+        list.add(new CompanyShares(symbol, shares));
+        System.out.println("Bought " + shares + " of " + symbol);
+    }
+
+    void sell(String symbol, int shares) {
+        for (CompanyShares cs : list) {
+            if (cs.symbol.equals(symbol) && cs.shares >= shares) {
+                cs.shares -= shares;
+                System.out.println("Sold " + shares + " of " + symbol);
+                return;
+            }
+        }
+        System.out.println("Not enough shares");
+    }
+
+    void display() {
+        for (CompanyShares cs : list)
+            System.out.println(cs.symbol + " : " + cs.shares);
+    }
+}
+
+public class StockAccountMain {
+    public static void main(String[] args) {
+
+        StockAccount sa = new StockAccount();
+
+        sa.buy("TCS", 10);
+        sa.sell("TCS", 5);
+        sa.display();
+    }
+}
