@@ -1,0 +1,16 @@
+import java.util.*;
+
+public class UC4_MoreParams {
+
+    public static <T extends Comparable<T>> T findMax(T... values) {
+
+        Arrays.sort(values);
+        return values[values.length - 1];
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println(findMax(1, 5, 3, 9, 2));
+        System.out.println(findMax("Apple", "Peach", "Banana", "Mango"));
+    }
+}
