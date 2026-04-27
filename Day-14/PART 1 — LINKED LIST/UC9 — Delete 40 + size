@@ -1,0 +1,25 @@
+public void delete(int key) {
+    if (head == null) return;
+
+    if (head.data == key) {
+        head = head.next;
+        return;
+    }
+
+    Node temp = head;
+    while (temp.next != null && temp.next.data != key)
+        temp = temp.next;
+
+    if (temp.next != null)
+        temp.next = temp.next.next;
+}
+
+public int size() {
+    int count = 0;
+    Node temp = head;
+    while (temp != null) {
+        count++;
+        temp = temp.next;
+    }
+    return count;
+}
