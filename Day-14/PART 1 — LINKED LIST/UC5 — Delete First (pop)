@@ -1,0 +1,4 @@
+public void pop() {
+    if (head != null)
+        head = head.next;
+}
