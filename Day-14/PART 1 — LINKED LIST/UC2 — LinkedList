@@ -1,0 +1,46 @@
+class Node {
+    int data;
+    Node next;
+
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+public class UC2_LinkedList {
+
+    Node head;
+
+    // Add element at beginning
+    public void add(int data) {
+        Node newNode = new Node(data);
+        newNode.next = head;
+        head = newNode;
+    }
+
+    // Print LinkedList
+    public void printList() {
+        Node temp = head;
+
+        while (temp != null) {
+            System.out.print(temp.data);
+            if (temp.next != null)
+                System.out.print(" -> ");
+            temp = temp.next;
+        }
+    }
+
+    public static void main(String[] args) {
+
+        UC2_LinkedList list = new UC2_LinkedList();
+
+        // Step-by-step as per UC2
+        list.add(70);  // first
+        list.add(30);  // added to 70
+        list.add(56);  // added to 30
+
+        // Final Output
+        list.printList();  // 56 -> 30 -> 70
+    }
+}
