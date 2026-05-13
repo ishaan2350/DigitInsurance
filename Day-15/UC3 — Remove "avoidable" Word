@@ -1,0 +1,30 @@
+import java.util.HashMap;
+
+public class RemoveWord {
+
+    public static void main(String[] args) {
+
+        String text = "Paranoids are not paranoid because they are paranoid " +
+                "but because they keep putting themselves deliberately " +
+                "into paranoid avoidable situations";
+
+        String[] words = text.toLowerCase().split(" ");
+
+        HashMap<String, Integer> map = new HashMap<>();
+
+        for(String word : words) {
+
+            if(word.equals("avoidable")) {
+                continue;
+            }
+
+            if(map.containsKey(word)) {
+                map.put(word, map.get(word) + 1);
+            } else {
+                map.put(word, 1);
+            }
+        }
+
+        System.out.println(map);
+    }
+}
