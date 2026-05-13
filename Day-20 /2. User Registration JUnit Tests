@@ -1,1 +1,114 @@
+1) UserRegistrationTest.java =>
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+public class UserRegistrationTest {
+
+    @Test
+    public void givenValidFirstName_ReturnTrue() {
+
+        boolean result =
+                UserRegistration.validateFirstName("Ishaan");
+
+        assertTrue(result);
+    }
+
+    @Test
+    public void givenInvalidFirstName_ReturnFalse() {
+
+        boolean result =
+                UserRegistration.validateFirstName("is");
+
+        assertFalse(result);
+    }
+
+    @Test
+    public void givenValidEmail_ReturnTrue() {
+
+        boolean result =
+                UserRegistration.validateEmail("abc.xyz@bl.co.in");
+
+        assertTrue(result);
+    }
+
+    @Test
+    public void givenInvalidEmail_ReturnFalse() {
+
+        boolean result =
+                UserRegistration.validateEmail("abc@.com");
+
+        assertFalse(result);
+    }
+
+    @Test
+    public void givenValidMobile_ReturnTrue() {
+
+        boolean result =
+                UserRegistration.validateMobile("91 9876543210");
+
+        assertTrue(result);
+    }
+
+    @Test
+    public void givenValidPassword_ReturnTrue() {
+
+        boolean result =
+                UserRegistration.validatePassword("Abcd123@");
+
+        assertTrue(result);
+    }
+}
+
+2) Parameterized Test for Emails =>
+
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+public class EmailParameterizedTest {
+
+    @ParameterizedTest
+    @ValueSource(strings = {
+            "abc@yahoo.com",
+            "abc-100@yahoo.com",
+            "abc.100@yahoo.com",
+            "abc111@abc.com"
+    })
+
+    public void givenValidEmails_ShouldReturnTrue(String email) {
+
+        assertTrue(
+                UserRegistration.validateEmail(email)
+        );
+    }
+}
+
+3) Invalid Email Parameterized Test =>
+
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+
+public class InvalidEmailTest {
+
+    @ParameterizedTest
+    @ValueSource(strings = {
+            "abc",
+            "abc@.com",
+            ".abc@abc.com",
+            "abc..2002@gmail.com"
+    })
+
+    public void givenInvalidEmails_ShouldReturnFalse(String email) {
+
+        assertFalse(
+                UserRegistration.validateEmail(email)
+        );
+    }
+}
+
 
